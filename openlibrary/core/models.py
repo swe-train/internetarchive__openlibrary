@@ -969,6 +969,7 @@ class User(Thing):
 
         Returns None if this user hasn't borrowed the given book.
         """
+        from ..plugins.upstream import borrow  # noqa: F401
 
         loans = (
             lending.get_cached_loans_of_user(self.key)
